@@ -1,0 +1,288 @@
+---
+title: "CS498AML Applied Machine Learning Homework 4"
+author: "Huamin Zhang, Rongzi Wang"
+date: "Mar 4, 2017"
+output: pdf_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(out.width='500px', out.height = '290px')
+```
+
+##7.9.
+At http://www.statsci.org/data/general/brunhild.html, you will find a dataset that measures the concentration of a sulfate in the blood of a baboon named Brunhilda as a function of time. Build a linear regression of the log of the concentration against the log of time.
+
+(a) Prepare a plot showing (a) the data points and (b) the regression line in log-log coordinates.
+
+###Answer:
+```{r}
+rm(list = ls())
+setwd("C:/Users/98302/Desktop/hw4")
+df <- read.table("brunhild.txt", header= TRUE)
+plot(log10(df$Hours), log10(df$Sulfate), main = "Log-log Coordinates of Hours vs Sulfate", 
+     xlab = "log10(Hours)", ylab = "log10(Sulfate)")
+loglog <- lm(log10(df$Sulfate)~log10(df$Hours))
+abline(loglog, col="red")
+```
+
+(b) Prepare a plot showing (a) the data points and (b) the regression curve in the original coordinates.
+
+###Answer:
+```{r}
+plot(df$Hours, df$Sulfate, main = "Hours vs Sulfate in Original Coordinates", 
+     xlab = "Hours", ylab = "Sulfate")
+original <- lm(df$Sulfate~df$Hours)
+abline(original, col="red")
+```
+
+(c) Plot the residual against the fitted values in log-log and in original coordinates.
+
+###Answer:
+The residual against the fitted values in log-log coordinates.
+```{r}
+plot(loglog,1)
+```
+
+The residual against the fitted values in original coordinates.
+```{r}
+plot(original,1)
+```
+
+(d) Use your plots to explain whether your regression is good or bad and why.
+
+###Answer:
+To compare these two model, we plot the residual against the fitted values in the same original coordinates.
+```{r}
+residual_log = df$Sulfate - 10^loglog$fitted.values
+plot(original$fitted.values,original$residuals,col="red",pch=19,xlim = c(3,14),xlab = "Fitted Values", ylab = "Residuals")
+points(10^loglog$fitted.values,residual_log,pch=19)
+lines(lowess(10^loglog$fitted.values,residual_log))
+lines(lowess(original$fitted.values,original$residuals),col="red")
+legend("topright",c("log-log model","original model"),col=c("black","red"),lty  = 1)
+abline(h = 0, col="red", lty = 2)
+```
+
+So we think the line of log-log model is closer to the line `residual = 0`. Also, we calculate the RSE(Mean Squared Error) in the same same original coordinates and R-squared.(Since the value of $R^2$ is not affected by the units of y, we just give the $R^2$ of these two model in different units)
+```{r}
+RSE_loglog = sum(residual_log^2) / dim(df)[1]
+RSE_original = sum(original$residuals^2) / dim(df)[1]
+R2_loglog = summary(loglog)$r.squared
+R2_original = summary(original)$r.squared
+RSE_loglog
+RSE_original
+R2_loglog
+R2_original
+```
+We found the RSE of log-log model(=`r RSE_loglog`) is smaller than the original model(=`r RSE_original`), and also the $R^2$ of log-log model(=`r R2_loglog`) is larger than the original model(=`r R2_original` < 0.7). Conbined with the result of residual vs fitted value plot, we think the log-log regression model is better, the original model isn't a good model.
+
+##7.10.
+At http://www.statsci.org/data/oz/physical.html, you will find a dataset of measurements by M. Larner, made in 1996. These measurements include body mass, and various diameters. Build a linear regression of predicting the body mass from these diameters.
+
+(a) Plot the residual against the fitted values for your regression.
+
+###Answer:
+```{r}
+rm(list = ls())
+setwd("C:/Users/98302/Desktop/hw4")
+data = read.table("physical.txt",header = T)
+x = as.matrix(data[,-1])
+y = data[,1]
+result_original <- lm(y~x)
+plot(result_original,1)
+```
+
+(b) Now regress the cube root of mass against these diameters. Plot the residual against the fitted values in both these cube root coordinates and in the original coordinates.
+
+###Answer:
+```{r}
+cube_y = y^(1/3)
+result_cube <- lm(cube_y~x)
+```
+The residual against the fitted values in the cube root coordinates
+```{r}
+plot(result_cube,1)
+```
+
+The residual against the fitted values in the original coordinates.
+```{r}
+predict2_original = result_cube$f^3
+residual2_original <- y - predict2_original
+plot(predict2_original,residual2_original,xlab = "Fitted Values", 
+     ylab = "Residuals",main = "The residual against the fitted values 
+     in the original coordinates")
+lines(lowess(predict2_original,residual2_original),col="red")
+abline(h = 0, col="black", lty = 2)
+```
+
+(c) Use your plots to explain which regression is better.
+
+###Answer:
+To compare these two model, we plot the residual against the fitted values in the same original coordinates.
+```{r}
+plot(result_original$fitted.values,result_original$residuals,col="red",pch=19,
+     xlab = "Fitted Values", ylab = "Residuals",ylim=c(-3,5))
+points(predict2_original,residual2_original,pch=19)
+lines(lowess(result_original$fitted.values,result_original$residuals),col="red")
+lines(lowess(predict2_original,residual2_original))
+legend("topleft",c("cube model","orginal model"),col=c("black","red"),lty  = 1)
+abline(h = 0, col="red", lty = 2)
+```
+
+So we think the plots of these two regression are almost the same. The cube model performs better when fitted value is small but performs worse when fitted value is large. Also, we calculate the RSE(Mean Squared Error) in the same same original coordinates and R-squared.(Since the value of $R^2$ is not affected by the units of y, we just give the $R^2$ of these two model in different units)
+```{r}
+RSE_cube = sum(residual2_original^2) / dim(data)[1]
+RSE_original = sum(result_original$residuals^2) / dim(data)[1]
+R2_cube = summary(result_cube)$r.squared
+R2_original = summary(result_original)$r.squared
+RSE_cube
+RSE_original
+R2_cube
+R2_original
+```
+We found the RSE of original model(=`r RSE_original`) is smaller than the cube model(=`r RSE_cube`), and also the $R^2$ of original model(=`r R2_original`) is larger than the cube model(=`r R2_cube`). Conbined with the result of residual vs fitted value plot, we think both regression curves fit most of the data points, so these two models are both good regression. And their performance($R^2$,RSM,residual) are almost the same, maybe the original model is a litte better.(I think the result may due to that there are 10 features but only 22 examples, we need more examples to compare these two regression.)
+
+
+##7.11.
+At https://archive.ics.uci.edu/ml/datasets/Abalone, you will find a dataset of measurements by W. J. Nash, T. L. Sellers, S. R. Talbot, A. J. Cawthorn and W. B. Ford, made in 1992. These are a variety of measurements of blacklip abalone (Haliotis rubra; delicious by repute) of various ages and genders.
+
+(a) Build a linear regression predicting the age from the measurements, ignoring gender. Plot the residual against the fitted values.
+
+###Answer:
+```{r}
+rm(list = ls())
+setwd("C:/Users/98302/Desktop/hw4")
+df <- read.csv("abalone.data", header=F)
+colnames(df) = c("Sex", "Length","Diameter","Height","Whole_weight", 
+                 "Shucked_weight","Viscera_weight","Shell_weight","Rings")
+fit.lm <- lm(formula = Rings ~ Length+Diameter+Height+Whole_weight+ 
+                Shucked_weight+Viscera_weight+Shell_weight, data=df)
+summary(fit.lm)
+plot(fit.lm,1)
+```
+
+(b) Build a linear regression predicting the age from the measurements, including gender. There are three levels for gender; I'm not sure whether this has to do with abalone biology or difficulty in determining gender. You can represent gender numerically by choosing 1 for one level, 0 for another, and -1 for the third. Plot the residual against the fitted values.
+
+###Answer:
+```{r}
+df$Sex = as.character(df$Sex)
+df$Sex[df$Sex %in% "M"] <- 1
+df$Sex[df$Sex %in% "F"] <- -1
+df$Sex[df$Sex %in% "I"] <- 0
+df$Sex = as.numeric(df$Sex)
+fit_sex.lm <- lm(formula = Rings ~ Sex+Length+Diameter+Height+ 
+                    Whole_weight+Shucked_weight+Viscera_weight+Shell_weight, data=df)
+summary(fit_sex.lm)
+plot(fit_sex.lm,1)
+```
+
+(c) Now build a linear regression predicting the log of age from the measurements, ignoring gender. Plot the residual against the fitted values.
+
+###Answer:
+```{r}
+log_fit.lm <- lm(formula = log10(Rings) ~ Length+Diameter+Height+Whole_weight+ 
+                    Shucked_weight+Viscera_weight+Shell_weight, data=df)
+summary(log_fit.lm)
+plot(log_fit.lm,1)
+```
+
+(d) Now build a linear regression predicting the log age from the measurements, including gender, represented as above. Plot the residual against the fitted values.
+
+###Answer:
+```{r}
+log_fit_sex.lm <- lm(formula = log10(Rings) ~ Sex+Length+Diameter+Height+Whole_weight+ 
+                        Shucked_weight+Viscera_weight+Shell_weight, data=df)
+summary(log_fit_sex.lm)
+plot(log_fit_sex.lm,1)
+```
+
+(e) It turns out that determining the age of an abalone is possible, but difficult (you section the shell, and count rings). Use your plots to explain which regression you would use to replace this procedure, and why.
+
+###Answer:
+To compare these four model, we plot the lowess curves of residual against the fitted values in the same original coordinates.
+```{r}
+predict_log = 10^log_fit.lm$fitted.values
+residual_log = df$Rings - predict_log
+predict_log_sex = 10^log_fit_sex.lm$fitted.values
+residual_log_sex = df$Rings - predict_log_sex
+plot(lowess(fit.lm$fitted.values,fit.lm$residuals),col="red",lty = 1,  
+     lwd = 2,type = "l",xlim=c(-5,30),ylim=c(-5,0.5), xlab = "Fitted Values", 
+     ylab = "Residuals")
+lines(lowess(fit_sex.lm$fitted.values,fit_sex.lm$residuals),col="blue",
+      lty = 1,  lwd = 2)
+lines(lowess(predict_log ,residual_log),col="green",lty = 1, lwd = 2)
+lines(lowess(predict_log_sex,residual_log_sex),col="black",lty = 1,  lwd = 2)
+legend("topright",c("original model without sex","original model with sex",
+      "log model without sex","log model with sex"), col=c("red","blue",
+      "green","black"),lty  = 1)
+abline(h = 0, col="red", lty = 2)
+```
+So we think the plots of these two regression are almost the same. Also, we calculate the RSE(Mean Squared Error) in the same same original coordinates and R-squared.(Since the value of $R^2$ is not affected by the units of y, we just give the $R^2$ of these two model in different units)
+```{r}
+RSE_original = sum(fit.lm$residuals^2) / dim(df)[1]
+RSE_original_sex = sum(fit_sex.lm$residuals^2) / dim(df)[1]
+RSE_log = sum(residual_log^2) / dim(df)[1]
+RSE_log_sex = sum(residual_log_sex^2) / dim(df)[1]
+
+R2_original = summary(fit.lm)$r.squared
+R2_original_sex = summary(fit_sex.lm)$r.squared
+R2_log = summary(log_fit.lm)$r.squared
+R2_log_sex = summary(log_fit_sex.lm)$r.squared
+
+RSE_original
+RSE_original_sex
+RSE_log
+RSE_log_sex
+R2_original
+R2_original_sex
+R2_log
+R2_log_sex
+```
+Based on the 4 residual vs fitted plots above, we observe that the 4 fitted trends are relatively close to each other. From the 4 plots, we see that the log models are closer to 0 (less residuals) from 0 to 15 and slightly higher residuals as fitted values get bigger. It is difficult to spot the systematic error purely base on the plots. 
+
+By comparing the numerical data, we observe that the log models give higher R squared than the original model (more accurate prediction), while the original models show less residual standard error than the log model. The log model with sex appears to be slightly better than the other three, even though the difference is insignificant. 
+
+(f) Can you improve these regressions by using a regularizer? Use glmnet to obtain plots of the cross-validated prediction error.
+
+###Answer:
+```{r}
+library(glmnet)
+x1 <- as.matrix(data.frame(df[2:8]))
+x2 <- as.matrix(data.frame(df[1:8]))
+y <- as.matrix(data.frame(df$Rings))
+
+result1.cv <- cv.glmnet(x = x1, y = y, family = "gaussian", alpha = 1, nfold = 10)
+result2.cv <- cv.glmnet(x = x2, y = y, family = "gaussian", alpha = 1, nfold = 10)
+result3.cv <- cv.glmnet(x = x1, y = log10(y), family = "gaussian", alpha = 1, nfold = 10)
+result4.cv <- cv.glmnet(x = x2, y = log10(y), family = "gaussian", alpha = 1, nfold = 10)
+
+plot(result1.cv)
+plot(result2.cv)
+plot(result3.cv)
+plot(result4.cv)
+plot(result1.cv$cvm)
+plot(result2.cv$cvm)
+plot(result3.cv$cvm)
+plot(result4.cv$cvm)
+result1.pred <- predict(result1.cv, s = result1.cv$lambda.1se, newx = x1)
+result2.pred <- predict(result2.cv, s = result2.cv$lambda.1se, newx = x2)
+result3.pred <- predict(result3.cv, s = result3.cv$lambda.1se, newx = x1)
+result4.pred <- predict(result4.cv, s = result4.cv$lambda.1se, newx = x2)
+
+RSE1 = mean((result1.pred - y)^2)
+RSE2 = mean((result2.pred - y)^2)
+RSE3 = mean((10^result3.pred - y)^2)
+RSE4 = mean((10^result4.pred - y)^2)
+
+RSE1
+RSE2
+RSE3
+RSE4
+R2_1 = var(result1.pred) / var(y)
+R2_2 = var(result2.pred) / var(y)
+R2_3 = var(result3.pred) / var(log10(y))
+R2_4 = var(result4.pred) / var(log10(y))
+as.numeric(R2_1)
+as.numeric(R2_2)
+as.numeric(R2_3)
+as.numeric(R2_4)
+```
+According to the plots, error increases with lambda, so when lambda = 0, there is a smallest MSE which means without a regularizer. Also, we can find that when model is with a regularizer, its RSE is larger and its $R^2$ is smaller. So it did not improve these regressions by using a regularizer. But, with a regularizer, may it will perform better with unseen data.
