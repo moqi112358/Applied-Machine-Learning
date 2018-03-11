@@ -1,0 +1,25 @@
+#Environment: python3.5, tensorflow 1.1
+
+Here is two folds.
+
+mnist: Include the result and script for Question 1.
+	mnist/problem1:  The model used in the tensorboard tutorial 
+	mnist/problem2:  The model used in the "DEEP MNIST for experts" tutorial 
+	mnist/advanced:  Motified the model in problem2
+In each fold, it includes: 
+	acc.txt: the training and test accuracy
+	HW8_mnist.py: train the CNN model
+	draw_convnet.py: create the graph of CNN model
+
+cifar: Include the result and script for Question 2.
+	cifar/problem1:  The model used in the tutorial 
+	cifar/advanced:  Motified the model in problem1
+In each fold, it includes: 
+	train.txt: the training accuracy
+	eval.txt: the training test accuracy
+	cifar10.py: create the CNN model
+	cifar10_train.py: run the training part
+	cifar10_eval.py: run the evaluating part
+	cifar10_input.py: data input
+	draw_convnet.py: create the graph of CNN model
+	#You should run the cifar10_train.py and cifar10_eval.py at the same time.

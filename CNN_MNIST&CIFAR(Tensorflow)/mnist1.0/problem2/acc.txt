@@ -1,0 +1,54 @@
+Step: 0 Test Accuracy: 0.1068
+Step: 100 Train Accuracy: 0.644949 Test Accuracy: 0.6455
+Step: 200 Train Accuracy: 0.676566 Test Accuracy: 0.668
+Step: 300 Train Accuracy: 0.674949 Test Accuracy: 0.6715
+Step: 400 Train Accuracy: 0.676667 Test Accuracy: 0.675
+Step: 500 Train Accuracy: 0.675758 Test Accuracy: 0.6798
+Step: 600 Train Accuracy: 0.777677 Test Accuracy: 0.7669
+Step: 700 Train Accuracy: 0.78 Test Accuracy: 0.7765
+Step: 800 Train Accuracy: 0.869596 Test Accuracy: 0.863
+Step: 900 Train Accuracy: 0.871616 Test Accuracy: 0.8696
+Step: 1000 Train Accuracy: 0.878283 Test Accuracy: 0.8732
+Step: 1100 Train Accuracy: 0.879899 Test Accuracy: 0.8757
+Step: 1200 Train Accuracy: 0.882727 Test Accuracy: 0.8755
+Step: 1300 Train Accuracy: 0.886768 Test Accuracy: 0.8799
+Step: 1400 Train Accuracy: 0.882222 Test Accuracy: 0.8798
+Step: 1500 Train Accuracy: 0.886465 Test Accuracy: 0.881
+Step: 1600 Train Accuracy: 0.890101 Test Accuracy: 0.881
+Step: 1700 Train Accuracy: 0.979899 Test Accuracy: 0.9742
+Step: 1800 Train Accuracy: 0.983838 Test Accuracy: 0.9759
+Step: 1900 Train Accuracy: 0.981717 Test Accuracy: 0.9782
+Step: 2000 Train Accuracy: 0.983737 Test Accuracy: 0.9803
+Step: 2100 Train Accuracy: 0.984646 Test Accuracy: 0.9826
+Step: 2200 Train Accuracy: 0.984848 Test Accuracy: 0.981
+Step: 2300 Train Accuracy: 0.989091 Test Accuracy: 0.9823
+Step: 2400 Train Accuracy: 0.986263 Test Accuracy: 0.9824
+Step: 2500 Train Accuracy: 0.989293 Test Accuracy: 0.9832
+Step: 2600 Train Accuracy: 0.98697 Test Accuracy: 0.9819
+Step: 2700 Train Accuracy: 0.989899 Test Accuracy: 0.9852
+Step: 2800 Train Accuracy: 0.990404 Test Accuracy: 0.984
+Step: 2900 Train Accuracy: 0.990404 Test Accuracy: 0.9849
+Step: 3000 Train Accuracy: 0.991313 Test Accuracy: 0.9841
+Step: 3100 Train Accuracy: 0.989192 Test Accuracy: 0.9822
+Step: 3200 Train Accuracy: 0.990101 Test Accuracy: 0.984
+Step: 3300 Train Accuracy: 0.992222 Test Accuracy: 0.9869
+Step: 3400 Train Accuracy: 0.991616 Test Accuracy: 0.985
+Step: 3500 Train Accuracy: 0.993333 Test Accuracy: 0.9879
+Step: 3600 Train Accuracy: 0.993636 Test Accuracy: 0.9876
+Step: 3700 Train Accuracy: 0.992828 Test Accuracy: 0.988
+Step: 3800 Train Accuracy: 0.992828 Test Accuracy: 0.9863
+Step: 3900 Train Accuracy: 0.992727 Test Accuracy: 0.9861
+Step: 4000 Train Accuracy: 0.993636 Test Accuracy: 0.9873
+Step: 4100 Train Accuracy: 0.993939 Test Accuracy: 0.9863
+Step: 4200 Train Accuracy: 0.992121 Test Accuracy: 0.9855
+Step: 4300 Train Accuracy: 0.994242 Test Accuracy: 0.9896
+Step: 4400 Train Accuracy: 0.992121 Test Accuracy: 0.9861
+Step: 4500 Train Accuracy: 0.993636 Test Accuracy: 0.9894
+Step: 4600 Train Accuracy: 0.995353 Test Accuracy: 0.9877
+Step: 4700 Train Accuracy: 0.99404 Test Accuracy: 0.9895
+Step: 4800 Train Accuracy: 0.994949 Test Accuracy: 0.9899
+Step: 4900 Train Accuracy: 0.994343 Test Accuracy: 0.9888
+Step: 5000 Train Accuracy: 0.99404 Test Accuracy: 0.9883
+
+ Average test accuracy: 0.92489
+ Max test accuracy: 0.9899

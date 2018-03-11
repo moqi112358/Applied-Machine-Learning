@@ -1,0 +1,174 @@
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcublas.so.8.0 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcudnn.so.5 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcufft.so.8.0 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcurand.so.8.0 locally
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:04:00.0
+Total memory: 11.92GiB
+Free memory: 11.16GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x371a940
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 1 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:05:00.0
+Total memory: 11.92GiB
+Free memory: 11.16GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x371ec70
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 2 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:08:00.0
+Total memory: 11.92GiB
+Free memory: 11.48GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x3722fd0
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 3 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:09:00.0
+Total memory: 11.92GiB
+Free memory: 11.48GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x3727330
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 4 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:84:00.0
+Total memory: 11.92GiB
+Free memory: 11.48GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x372b690
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 5 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:85:00.0
+Total memory: 11.92GiB
+Free memory: 11.48GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x372f9f0
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 6 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:88:00.0
+Total memory: 11.92GiB
+Free memory: 11.48GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x3733d50
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 7 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:89:00.0
+Total memory: 11.92GiB
+Free memory: 11.48GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 0 and 4
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 0 and 5
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 0 and 6
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 0 and 7
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 1 and 4
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 1 and 5
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 1 and 6
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 1 and 7
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 2 and 4
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 2 and 5
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 2 and 6
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 2 and 7
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 3 and 4
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 3 and 5
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 3 and 6
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 3 and 7
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 4 and 0
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 4 and 1
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 4 and 2
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 4 and 3
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 5 and 0
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 5 and 1
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 5 and 2
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 5 and 3
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 6 and 0
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 6 and 1
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 6 and 2
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 6 and 3
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 7 and 0
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 7 and 1
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 7 and 2
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 7 and 3
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 1 2 3 4 5 6 7 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y Y Y Y N N N N 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 1:   Y Y Y Y N N N N 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 2:   Y Y Y Y N N N N 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 3:   Y Y Y Y N N N N 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 4:   N N N N Y Y Y Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 5:   N N N N Y Y Y Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 6:   N N N N Y Y Y Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 7:   N N N N Y Y Y Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:04:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:05:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:2) -> (device: 2, name: GeForce GTX TITAN X, pci bus id: 0000:08:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:3) -> (device: 3, name: GeForce GTX TITAN X, pci bus id: 0000:09:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:4) -> (device: 4, name: GeForce GTX TITAN X, pci bus id: 0000:84:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:5) -> (device: 5, name: GeForce GTX TITAN X, pci bus id: 0000:85:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:6) -> (device: 6, name: GeForce GTX TITAN X, pci bus id: 0000:88:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:7) -> (device: 7, name: GeForce GTX TITAN X, pci bus id: 0000:89:00.0)
+Successfully downloaded train-images-idx3-ubyte.gz 9912422 bytes.
+Extracting /home/huaminz2/cs498/hw8/mnist/problem2/input_data/train-images-idx3-ubyte.gz
+Successfully downloaded train-labels-idx1-ubyte.gz 28881 bytes.
+Extracting /home/huaminz2/cs498/hw8/mnist/problem2/input_data/train-labels-idx1-ubyte.gz
+Successfully downloaded t10k-images-idx3-ubyte.gz 1648877 bytes.
+Extracting /home/huaminz2/cs498/hw8/mnist/problem2/input_data/t10k-images-idx3-ubyte.gz
+Successfully downloaded t10k-labels-idx1-ubyte.gz 4542 bytes.
+Extracting /home/huaminz2/cs498/hw8/mnist/problem2/input_data/t10k-labels-idx1-ubyte.gz
+Step: 0 Test Accuracy: 0.1068
+Step: 100 Train Accuracy: 0.644949 Test Accuracy: 0.6455
+Step: 200 Train Accuracy: 0.676566 Test Accuracy: 0.668
+Step: 300 Train Accuracy: 0.674949 Test Accuracy: 0.6715
+Step: 400 Train Accuracy: 0.676667 Test Accuracy: 0.675
+Step: 500 Train Accuracy: 0.675758 Test Accuracy: 0.6798
+Step: 600 Train Accuracy: 0.777677 Test Accuracy: 0.7669
+Step: 700 Train Accuracy: 0.78 Test Accuracy: 0.7765
+Step: 800 Train Accuracy: 0.869596 Test Accuracy: 0.863
+Step: 900 Train Accuracy: 0.871616 Test Accuracy: 0.8696
+Step: 1000 Train Accuracy: 0.878283 Test Accuracy: 0.8732
+Step: 1100 Train Accuracy: 0.879899 Test Accuracy: 0.8757
+Step: 1200 Train Accuracy: 0.882727 Test Accuracy: 0.8755
+Step: 1300 Train Accuracy: 0.886768 Test Accuracy: 0.8799
+Step: 1400 Train Accuracy: 0.882222 Test Accuracy: 0.8798
+Step: 1500 Train Accuracy: 0.886465 Test Accuracy: 0.881
+Step: 1600 Train Accuracy: 0.890101 Test Accuracy: 0.881
+Step: 1700 Train Accuracy: 0.979899 Test Accuracy: 0.9742
+Step: 1800 Train Accuracy: 0.983838 Test Accuracy: 0.9759
+Step: 1900 Train Accuracy: 0.981717 Test Accuracy: 0.9782
+Step: 2000 Train Accuracy: 0.983737 Test Accuracy: 0.9803
+Step: 2100 Train Accuracy: 0.984646 Test Accuracy: 0.9826
+Step: 2200 Train Accuracy: 0.984848 Test Accuracy: 0.981
+Step: 2300 Train Accuracy: 0.989091 Test Accuracy: 0.9823
+Step: 2400 Train Accuracy: 0.986263 Test Accuracy: 0.9824
+Step: 2500 Train Accuracy: 0.989293 Test Accuracy: 0.9832
+Step: 2600 Train Accuracy: 0.98697 Test Accuracy: 0.9819
+Step: 2700 Train Accuracy: 0.989899 Test Accuracy: 0.9852
+Step: 2800 Train Accuracy: 0.990404 Test Accuracy: 0.984
+Step: 2900 Train Accuracy: 0.990404 Test Accuracy: 0.9849
+Step: 3000 Train Accuracy: 0.991313 Test Accuracy: 0.9841
+Step: 3100 Train Accuracy: 0.989192 Test Accuracy: 0.9822
+Step: 3200 Train Accuracy: 0.990101 Test Accuracy: 0.984
+Step: 3300 Train Accuracy: 0.992222 Test Accuracy: 0.9869
+Step: 3400 Train Accuracy: 0.991616 Test Accuracy: 0.985
+Step: 3500 Train Accuracy: 0.993333 Test Accuracy: 0.9879
+Step: 3600 Train Accuracy: 0.993636 Test Accuracy: 0.9876
+Step: 3700 Train Accuracy: 0.992828 Test Accuracy: 0.988
+Step: 3800 Train Accuracy: 0.992828 Test Accuracy: 0.9863
+Step: 3900 Train Accuracy: 0.992727 Test Accuracy: 0.9861
+Step: 4000 Train Accuracy: 0.993636 Test Accuracy: 0.9873
+Step: 4100 Train Accuracy: 0.993939 Test Accuracy: 0.9863
+Step: 4200 Train Accuracy: 0.992121 Test Accuracy: 0.9855
+Step: 4300 Train Accuracy: 0.994242 Test Accuracy: 0.9896
+Step: 4400 Train Accuracy: 0.992121 Test Accuracy: 0.9861
+Step: 4500 Train Accuracy: 0.993636 Test Accuracy: 0.9894
+Step: 4600 Train Accuracy: 0.995353 Test Accuracy: 0.9877
+Step: 4700 Train Accuracy: 0.99404 Test Accuracy: 0.9895
+Step: 4800 Train Accuracy: 0.994949 Test Accuracy: 0.9899
+Step: 4900 Train Accuracy: 0.994343 Test Accuracy: 0.9888
+Step: 5000 Train Accuracy: 0.99404 Test Accuracy: 0.9883
